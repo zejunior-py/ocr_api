@@ -8,7 +8,8 @@ phases:
     commands:
       - echo Build started on `date`
       - cd $CODEBUILD_SRC_DIR
-      - docker-compose up -d --build
+      - pwd
+      - sudo docker-compose up -d --build
   post_build:
     commands:
       - echo Build completed on `date`
