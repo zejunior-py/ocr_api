@@ -32,7 +32,7 @@ RUN pip3 install --upgrade pip
 # Install project dependencies
 COPY requirements.txt /app/
 COPY manage.py /app/
-COPY .env /app/
+#COPY .env /app/
 
 RUN pip install -r requirements.txt
 RUN ./manage.py makemigrations && ./manage.py migrate

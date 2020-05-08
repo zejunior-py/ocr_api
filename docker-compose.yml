@@ -3,7 +3,5 @@ services:
     django:
         container_name: django-api-backend
         build: "./src"
-        env_file:
-          - .env
         ports:
           - "8000:8000"
