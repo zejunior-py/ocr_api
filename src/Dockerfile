@@ -31,8 +31,11 @@ RUN pip3 install --upgrade pip
 
 # Install project dependencies
 COPY requirements.txt /app/
-#COPY .env /app/
+COPY manage.py /app/
+COPY .env /app/
+
 RUN pip install -r requirements.txt
+RUN ./manage.py makemigrations && ./manage.py migrate
 
 #EXPOSE 8888
 CMD gunicorn api_backend.wsgi:application --bind 0.0.0.0:8000
